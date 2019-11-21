@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPage.master" AutoEventWireup="true" CodeFile="ViewOrders.aspx.cs" Inherits="Admin_ViewOrders" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customer Care Executive/MasterPage.master" AutoEventWireup="true" CodeFile="ViewOrders.aspx.cs" Inherits="Customer_Care_Executive_ViewOrders" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
@@ -61,7 +61,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="productnameLabel" runat="server" Font-Bold="True" ForeColor="#33CC33" Text='<%# Eval("productname") %>' />
                     &nbsp;&nbsp;
-                    <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Italic="True" Text='<%# Eval("status") %>'></asp:Label>
+                    <asp:Label ID="Label6" runat="server" Font-Italic="True" Text='<%# Eval("status") %>'></asp:Label>
                     <br />
                     <br />
                     <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="About "></asp:Label>
@@ -142,7 +142,7 @@
                 </ItemTemplate>
                 <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
             </asp:DataList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" SelectCommand="select order_table.*, tbl_productdetails.* from order_table,tbl_productdetails where order_table.product_code=tbl_productdetails.productid order by status asc">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" SelectCommand="select order_table.*, tbl_productdetails.* from order_table,tbl_productdetails where order_table.product_code=tbl_productdetails.productid ">
             </asp:SqlDataSource>
         </td>
         <td>&nbsp;</td>

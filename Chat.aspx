@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customer/MasterPage.master" AutoEventWireup="true" CodeFile="Chat.aspx.cs" Inherits="Customer_Chat" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customer Care Executive/MasterPage.master" AutoEventWireup="true" CodeFile="Chat.aspx.cs" Inherits="Customer_Care_Executive_Chat" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
@@ -36,6 +36,36 @@
             <td>
                 <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#66FF33" Text="Have A Problem ? Chat With Our Executives"></asp:Label>
             </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="auto-style1">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="auto-style1">&nbsp;</td>
+            <td> <div class="form-group">
+                                    <br />
+                                    <br />
+                                    <br />
+										<div class="col-md-8">
+											<div class="input-group input-icon right">
+												<span class="input-group-addon">
+													<i class="fa fa-envelope-o"></i>
+												</span>
+                                                <asp:DropDownList ID="DropDownList1" class="form-control1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="sender" DataValueField="sender"></asp:DropDownList>
+                                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" SelectCommand="select DISTINCT sender from Chat where usertype='Customer'"></asp:SqlDataSource>
+                                                <br />
+                                            </div>
+										</div>
+										<div class="col-sm-2">
+										</div>
+									</div>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -151,9 +181,10 @@
             <td>&nbsp;</td>
             <td class="auto-style1">&nbsp;</td>
             <td>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" SelectCommand="select * from Chat where sender=@id or reciever=@id order by date asc">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" SelectCommand="select * from Chat where ( sender=@id or reciever=@id) and ( sender=@cid or reciever=@cid)   order by date asc">
                     <SelectParameters>
                         <asp:SessionParameter Name="id" SessionField="Username" />
+                        <asp:ControlParameter ControlID="DropDownList1" Name="cid" PropertyName="SelectedValue" />
                     </SelectParameters>
                 </asp:SqlDataSource>
             </td>
