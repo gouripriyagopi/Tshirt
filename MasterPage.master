@@ -67,33 +67,35 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
               </li>
 
 
-			
+			  <li>
+                <a href="Profile.aspx">
+                <i class="fa fa-edit"></i> <span>Profile</span>
+                </a>
+              </li>
+                 <li>
+                <a href="Products.aspx">
+                <i class="fa fa-edit"></i> <span>New Designs</span>
+                </a>
+              </li>
              
               <li class="treeview">
                 <a href="#">
-                <i class="fa fa-table"></i> <span>User Verification</span>
+                <i class="fa fa-table"></i> <span>My Orders</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a  href="ViewCustomers.aspx"><i class="fa fa-angle-right"></i> Customer</a></li>
-                  <li><a  href="ViewCCE.aspx"><i class="fa fa-angle-right"></i> Customer Care Excicutive</a></li>
-                  <li><a  href="ViewDesigners.aspx"><i class="fa fa-angle-right"></i> Designer </a></li>
+                  <li><a  href="MyOrders.aspx"><i class="fa fa-angle-right"></i> New Orders</a></li>
+                  <li><a  href="CompletedOrders.aspx"><i class="fa fa-angle-right"></i> Previous Orders </a></li>
 
                 </ul>
               </li>
-                  <li>
-                <a href="ViewProducts.aspx">
-                <i class="fa fa-edit"></i> <span>View Products</span>
+ <li>
+                <a href="Chat.aspx">
+                <i class="fa fa-edit"></i> <span>Chat</span>
                 </a>
               </li>
-                <li>
-                <a href="ViewOrders.aspx">
-                <i class="fa fa-folder"></i> <span>View Orders</span>
-                </a>
-              </li>         
-
 			  <li>
-                <a href="../Guest/Registration/Login.aspx">
+                <a href="../Guest/Home/index.html">
                 <i class="fa fa-folder"></i> <span>Logout</span>
                 </a>
               </li>             
