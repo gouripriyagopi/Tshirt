@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Customer_Care_Executive_Home : System.Web.UI.Page
+public partial class Designer_Home : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

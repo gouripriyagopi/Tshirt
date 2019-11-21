@@ -17,9 +17,9 @@ public partial class Designer_Profile : System.Web.UI.Page
             NameBox.Text = con.dr.GetValue(1).ToString();
             HouseBox.Text = con.dr.GetValue(3).ToString();
             LandMarkBox.Text = con.dr.GetValue(5).ToString();
-            StateBox.Text = con.dr.GetValue(7).ToString();
-            DistrictBox.Text = con.dr.GetValue(6).ToString();
-            PlaceBox.Text = con.dr.GetValue(4).ToString();
+            StateBox.SelectedValue = con.dr.GetValue(7).ToString();
+            DistrictBox.SelectedValue = con.dr.GetValue(6).ToString();
+            PlaceBox.SelectedValue = con.dr.GetValue(4).ToString();
             NationalityBox.Text = con.dr.GetValue(8).ToString();
             PincodeBox.Text = con.dr.GetValue(9).ToString();
             PhoneBox.Text = con.dr.GetValue(10).ToString();

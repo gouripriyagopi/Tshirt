@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customer Care Executive/MasterPage.master" AutoEventWireup="true" CodeFile="ViewOrders.aspx.cs" Inherits="Customer_Care_Executive_ViewOrders" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Designer/MasterPage.master" AutoEventWireup="true" CodeFile="ViewOrders.aspx.cs" Inherits="Designer_ViewOrders" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
@@ -43,7 +44,7 @@
         <td>&nbsp;</td>
         <td class="auto-style1">&nbsp;</td>
         <td>
-            <asp:DataList ID="DataList1" runat="server" CellPadding="4" DataKeyField="order_id" DataSourceID="SqlDataSource1" ForeColor="#333333" >
+            <asp:DataList ID="DataList1" runat="server" CellPadding="4" DataKeyField="order_id" DataSourceID="SqlDataSource1" ForeColor="#333333" OnItemCommand="DataList1_ItemCommand">
                 <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -60,8 +61,6 @@
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="productnameLabel" runat="server" Font-Bold="True" ForeColor="#33CC33" Text='<%# Eval("productname") %>' />
-                    &nbsp;&nbsp;
-                    <asp:Label ID="Label6" runat="server" Font-Italic="True" Text='<%# Eval("status") %>'></asp:Label>
                     <br />
                     <br />
                     <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="About "></asp:Label>
@@ -130,7 +129,8 @@
                     <asp:Label ID="phoneLabel" runat="server" Text='<%# Eval("phone") %>' />
                     <br />
                     <br />
-                   
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("order_id") %>' CommandName="Deliver" Font-Bold="True" Font-Size="Large" ForeColor="Red">Deliver Order</asp:LinkButton>
                     <br />
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
@@ -142,7 +142,10 @@
                 </ItemTemplate>
                 <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
             </asp:DataList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" SelectCommand="select order_table.*, tbl_productdetails.* from order_table,tbl_productdetails where order_table.product_code=tbl_productdetails.productid ">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" SelectCommand="select order_table.*, tbl_productdetails.* from order_table,tbl_productdetails where order_table.status='Ordered' and order_table.product_code=tbl_productdetails.productid  and tbl_productdetails.emailid=@id">
+                <SelectParameters>
+                    <asp:SessionParameter Name="id" SessionField="Username" />
+                </SelectParameters>
             </asp:SqlDataSource>
         </td>
         <td>&nbsp;</td>

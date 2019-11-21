@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Designer/MasterPage.master" AutoEventWireup="true" CodeFile="Profile.aspx.cs" Inherits="Designer_Profile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Designer/MasterPage.master" AutoEventWireup="true" CodeFile="ViewCustomer.aspx.cs" Inherits="Designer_ViewCustomer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
@@ -26,7 +26,7 @@
             <td>
                     <div class="row">
 						<h3 class="title1">&nbsp;</h3>
-                        <h3 class="title1">My Profile :</h3>
+                        <h3 class="title1">Customer&nbsp; Profile :</h3>
 							<div class=" panel-body-inputin">
 									
 									<div class="form-group">
@@ -56,7 +56,7 @@
 													<i class="fa fa-envelope-o"></i>
 												</span>
  
-                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="NameBox"></asp:textbox>		
+                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="NameBox" ReadOnly="True"></asp:textbox>		
                                                 <br />
                                             </div>
 										</div>
@@ -66,33 +66,27 @@
 									</div>
 
 
-
-
-                                    <div class="form-group">
-                                    <br />
+                                
+                                 <div class="form-group">
+                                     <br />
                                     <br />
 										<label class="col-md-2 control-label">Gender</label>
 										<div class="col-md-8">
 											<div class="input-group input-icon right">
-												
-                                                <asp:RadioButtonList ID="RadioButtonList1" CssClass="radio block" runat="server">
-                                                    <asp:ListItem>Male</asp:ListItem>
-                                                    <asp:ListItem>Female</asp:ListItem>
-                                                    <asp:ListItem>Others</asp:ListItem>
-                                                </asp:RadioButtonList>
-                                                 <br />
+												<span class="input-group-addon">
+													<i class="fa fa-envelope-o"></i>
+												</span>
+ 
+                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="Gender" ReadOnly="True"></asp:textbox>		
+                                                <br />
                                             </div>
 										</div>
 										<div class="col-sm-2">
-                                            <asp:requiredfieldvalidator ID="Requiredfieldvalidator3" runat="server" errormessage="Enter Gender" ControlToValidate="RadioButtonList1" ForeColor="Red"></asp:requiredfieldvalidator>
 										</div>
 									</div>
 
 
                                  <div class="form-group">
-                                    <br />
-                                     <br />
-                                     <br />
                                      <br />
                                     <br />
 										<label class="col-md-2 control-label">House Name</label>
@@ -102,7 +96,7 @@
 													<i class="fa fa-envelope-o"></i>
 												</span>
  
-                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="HouseBox"></asp:textbox>		
+                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="HouseBox" ReadOnly="True"></asp:textbox>		
                                                 <br />
                                             </div>
 										</div>
@@ -124,7 +118,7 @@
 													<i class="fa fa-envelope-o"></i>
 												</span>
  
-                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="LandMarkBox"></asp:textbox>		
+                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="LandMarkBox" ReadOnly="True"></asp:textbox>		
                                                 <br />
                                             </div>
 										</div>
@@ -143,8 +137,8 @@
 												<span class="input-group-addon">
 													<i class="fa fa-envelope-o"></i>
 												</span>
- 
-                                                <asp:DropDownList ID="StateBox" class="form-control1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name" AutoPostBack="True"></asp:DropDownList>		
+                                                 <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="StateBox" ReadOnly="True"></asp:textbox>		
+
                                                 <br />
                                             </div>
 										</div>
@@ -163,8 +157,8 @@
 												<span class="input-group-addon">
 													<i class="fa fa-envelope-o"></i>
 												</span>
- 
-                                                <asp:DropDownList ID="DistrictBox" class="form-control1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="Name" AutoPostBack="True"></asp:DropDownList>		
+                                                 <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="DistrictBox" ReadOnly="True"></asp:textbox>		
+
                                                 <br />
                                             </div>
 										</div>
@@ -183,8 +177,8 @@
 												<span class="input-group-addon">
 													<i class="fa fa-envelope-o"></i>
 												</span>
- 
-                                                <asp:DropDownList ID="PlaceBox" class="form-control1" runat="server" DataSourceID="SqlDataSource3" DataTextField="Name" DataValueField="Name"></asp:DropDownList>		
+                                                 <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="PlaceBox" ReadOnly="True"></asp:textbox>		
+
                                                   
                                                 <br />
                                             </div>
@@ -204,10 +198,9 @@
 												<span class="input-group-addon">
 													<i class="fa fa-envelope-o"></i>
 												</span>
- 
-                                                <asp:DropDownList ID="NationalityBox" class="form-control1" runat="server" AutoPostBack="True">
-                                                    <asp:ListItem Value="Indian"></asp:ListItem>
-                                                </asp:DropDownList>		
+                                                 <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="NationalityBox" ReadOnly="True"></asp:textbox>		
+
+                                              	
                                                   
                                                 <br />
                                             </div>
@@ -229,7 +222,7 @@
 													<i class="fa fa-envelope-o"></i>
 												</span>
  
-                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="PincodeBox"></asp:textbox>		
+                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="PincodeBox" ReadOnly="True"></asp:textbox>		
                                                 <br />
                                             </div>
 										</div>
@@ -249,20 +242,19 @@
 													<i class="fa fa-envelope-o"></i>
 												</span>
  
-                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="PhoneBox"></asp:textbox>		
+                                                <asp:textbox  class="form-control1" runat="server" TextMode="SingleLine" ID="PhoneBox" ReadOnly="True"></asp:textbox>		
                                                 <br />
                                             </div>
 										</div>
 										<div class="col-sm-2">
                                             <asp:requiredfieldvalidator ID="Requiredfieldvalidator11" runat="server" errormessage="Enter Phone" ControlToValidate="PhoneBox" ForeColor="Red"></asp:requiredfieldvalidator>
-										<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="PhoneBox" ErrorMessage="Enter Valid Phone Number" Font-Size="Large" ForeColor="Red" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
-                                        </div>
+										</div>
 									</div>
 
                                 <div class="sub_home">
                                     <br />
                                     <br />
-                        <asp:Button ID="Button1" runat="server" Text="Update" Height="62px" Width="128px" OnClick="Button1_Click" />
+                        <asp:Button ID="Button1" runat="server" Text="Update" Height="62px" Width="128px" OnClick="Button1_Click" Visible="False" />
 						<div class="clearfix"> 
                             </div></div>
 
@@ -276,18 +268,7 @@
         <tr>
             <td class="auto-style1">&nbsp;</td>
             <td>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT * FROM [State]"></asp:SqlDataSource>
-                                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" SelectCommand="SELECT [Name] FROM [District] WHERE ([State] = @State)">
-                                                    <SelectParameters>
-                                                        <asp:ControlParameter ControlID="StateBox" Name="State" PropertyName="SelectedValue" Type="String" />
-                                                    </SelectParameters>
-                                                </asp:SqlDataSource>
-                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:TShirtDBConnectionString %>" SelectCommand="SELECT [Name] FROM [Place] WHERE ([District] = @District)">
-                                                    <SelectParameters>
-                                                        <asp:ControlParameter ControlID="DistrictBox" Name="District" PropertyName="SelectedValue" Type="String" />
-                                                    </SelectParameters>
-                </asp:SqlDataSource>
-            </td>
+                &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>

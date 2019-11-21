@@ -72,51 +72,74 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span> T-TRENDS<span class="dashboard_text">Executive dashboard</span></a></h1>
+            <h1><a class="navbar-brand" href="Home.aspx"><span class="fa fa-area-chart"></span> T-TRENDS<span class="dashboard_text">Design dashboard</span></a></h1>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="sidebar-menu">
               <li class="treeview">
-                <a href="index.html">
+                <a href="Home.aspx">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
               </li>
 
 
 			  <li>
-                <a href="profile.aspx">
+                <a href="Profile.aspx">
                 <i class="fa fa-edit"></i> <span>Profile</span>
                 </a>
               </li>
              
-              <li class="treeview">
-                <a href="executivebio.aspx">
-                <i class="fa fa-table"></i> <span>Bio</span>
-                <i class="fa fa-angle-left pull-right"></i>
-                </a>
-              
-              </li>
-                 
-              <li class="treeview">
-                <a href="Chat.aspx">
-                <i class="fa fa-table"></i> <span>Chat</span>
-                <i class="fa fa-angle-left pull-right"></i>
-                </a>
-              
-              </li>
-
-                  <li>
-                <a href="ViewOrders.aspx">
-                <i class="fa fa-edit"></i> <span>View Order</span>
-                </a>
-              </li>
-
+             
 			  <li>
+                <a href="Bio.aspx">
+                <i class="fa fa-folder"></i> <span>Bio</span>
+                </a>
+              </li>         
+            <li class="treeview">
+                <a href="#">
+                <i class="fa fa-table"></i> <span>My Works</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="MyWorks.aspx"><i class="fa fa-angle-right"></i> New Work</a></li>
+                  <li><a href="ViewMyWorks.aspx"><i class="fa fa-angle-right"></i> View Work</a></li>
+
+                </ul>
+              </li>  
+
+
+                <li class="treeview">
+                <a href="#">
+                <i class="fa fa-table"></i> <span>Sell T-Shirts</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="ProductDetails.aspx"><i class="fa fa-angle-right"></i> New Design</a></li>
+                  <li><a href="ViewOwnProducts.aspx"><i class="fa fa-angle-right"></i> View Own Designs</a></li>
+
+                </ul>
+              </li>    
+                <li class="treeview">
+                <a href="#">
+                <i class="fa fa-table"></i> <span>Orders</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="ViewOrders.aspx"><i class="fa fa-angle-right"></i> New Orders</a></li>
+                  <li><a href="CompletedOrders.aspx"><i class="fa fa-angle-right"></i> Completed Orders</a></li>
+
+                </ul>
+              </li>    
+                 <li>
+                <a href="PaintPlatform.aspx">
+                <i class="fa fa-folder"></i> <span>T-Trends Paint</span>
+                </a>
+              </li> 
+              <li>
                 <a href="../Guest/Home/index.html">
                 <i class="fa fa-folder"></i> <span>Logout</span>
                 </a>
-              </li>             
-             
+              </li>    
           </div>
           <!-- /.navbar-collapse -->
       </nav>
